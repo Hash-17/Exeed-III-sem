@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="spacing1">
+      <div class="container1">
+        <h1>Registration Form</h1>
+        <form
+          action="index.php"
+          id="registrationForm"
+          enctype="multipart/form-data"
+        >
+          <label>Name</label
+          ><input type="text" id="name" name="name" required />
+          <label>Email</label
+          ><input type="email" id="email" name="email" required />
+          <label>Password</label
+          ><input type="password" id="password" name="password" required />
+          <label>Date of Birth</label
+          ><input type="date" id="dob" name="dob" required />
+          <label>Phone Number</label
+          ><input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="9\d{9}"
+            required
+            minlength="10"
+            maxlength="10"
+            autocomplete="tel-national"
+            placeholder="9XXXXXXXXX"
+          />
+          <label for="photo">Select a photo</label>
+          <input type="file" id="photo" name="photo" />
+          <!-- <label for="otp">Enter your OTP:</label>
+          <input type="text" id="otp" name="otp" maxlength="6" required />
+          <button type="button" onclick="generateOTP()">Generate OTP</button>
+          <button type="button" onclick="verifyOTP()">Verify OTP</button> -->
+          <label
+            ><br /><input type="checkbox" id="terms" name="terms" />Accept Terms
+            & Conditions</label
+          ><br />
+          <button type="submit" onclick="validatePhoneNumber()">Submit</button>
+          <button type="button" id="clearTableBtn">Clear Table</button>
+        </form>
+      </div>
+    </div>
+    <table id="userTable">
+      <caption>
+        <h2>Entries</h2>
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Dob</th>
+          <th>phone</th>
+          <th>photo</th>
+          <th>Accepted terms?</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+    <script src="index.js"></script>
+  </body>
+</html>
